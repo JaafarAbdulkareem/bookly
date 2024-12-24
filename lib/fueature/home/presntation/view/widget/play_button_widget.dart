@@ -12,12 +12,13 @@ class PlayButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: Padding(
-        padding: const EdgeInsets.all(4),
-        child: Align(
-          alignment: Alignment.bottomRight,
-          child: ClipOval(
+    return Padding(
+      padding: const EdgeInsets.all(4),
+      child: Align(
+        alignment: Alignment.bottomRight,
+        child: ClipOval(
+          child: InkWell(
+            onTap: () {},
             child: BackdropFilter(
               filter: ImageFilter.blur(
                 sigmaX: HomeScale.blur,
