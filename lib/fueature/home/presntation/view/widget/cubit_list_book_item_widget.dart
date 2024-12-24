@@ -14,7 +14,7 @@ class CubitListBookItemWidget extends StatelessWidget {
     return BlocBuilder<HeadHomeCubit, HeadHomeState>(
       builder: (context, state) {
         if (state is HeadHomeSuccess) {
-          return const ListBookItemWidget();
+          return ListBookItemWidget(books: state.books,);
         } else if (state is HeadHomeFailure) {
           return Text(state.errorMessage);
         }
