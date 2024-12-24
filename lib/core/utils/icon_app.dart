@@ -7,4 +7,5 @@ abstract class IconApp {
   static const star = FontAwesomeIcons.solidStar;
   static const close = Icons.close;
   static const cart = Icons.shopping_cart_outlined;
+  static const image = FontAwesomeIcons.image;
 }
