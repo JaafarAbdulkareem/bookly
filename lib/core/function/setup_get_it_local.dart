@@ -8,7 +8,7 @@ import 'package:get_it/get_it.dart';
 
 GetIt getIt = GetIt.instance;
 
-setupGetItLocal(BuildContext context) {
+void setupGetItLocal(BuildContext context) {
   getIt.registerSingleton<ApiService>(
     ApiService(
       Dio(),
