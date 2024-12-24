@@ -1,7 +1,7 @@
 const String _baseUrl = "https://www.googleapis.com/";
 const String _bookUrl = "books/v1/volumes?";
 const String _headBookQuery = "q=programming&&filter=free-ebooks";
-const String _bodyBookQuery = "q=programming";
+const String _bodyBookQuery = "q=programming&maxResults=40";
 
 class ApiConstant {
   static const String headHomeUrl = _baseUrl + _bookUrl + _headBookQuery;
