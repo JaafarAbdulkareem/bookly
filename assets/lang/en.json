@@ -1,0 +1,18 @@
+{
+    "readFreeBooks": "Read Free Books",
+    "bestSeller": "Best Seller",
+    "freePreview": "Free Preview",
+    "similarbook": "You can also like",
+    "search": "Search",
+    "searchResult": "Result",
+    "connectionTimeout": "Connection TimeOut With Api Server",
+    "sendTimeout": "Send TimeOut With Api Server",
+    "receiveTimeout": "Receive TimeOut With Api Server",
+    "badCertificateTimeout": "Bad Certificate TimeOut With Api Server",
+    "cancelTimeout": "Cancel TimeOut With Api Server",
+    "connectionError": "No Internet Connection",
+    "unknownError": "Opps Error was an Error, Please try again",
+    "badResponse404": "Your request was not found, please try later",
+    "badResponse500": "These is a problem with server, please try later",
+    "badResponse400": "Required parameter: q"
+}
