@@ -1,6 +1,4 @@
 import 'dart:developer';
-
-import 'package:bookly/fueature/home/presntation/manage/head_home/head_home_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SimpleBlocObervator extends BlocObserver {
