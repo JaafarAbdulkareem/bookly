@@ -1,3 +1,4 @@
+import 'package:bookly/core/share/custom_progress_indcator_widget.dart';
 import 'package:bookly/fueature/home/presntation/manage/head_home/head_home_cubit.dart';
 import 'package:bookly/fueature/home/presntation/manage/head_home/head_home_state.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/list_book_item_widget.dart';
@@ -18,10 +19,10 @@ class CubitListBookItemWidget extends StatelessWidget {
         } else if (state is HeadHomeFailure) {
           return Text(state.errorMessage);
         }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const CustomProgressIndicatorWidget();
       },
     );
   }
 }
+
+
