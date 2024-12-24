@@ -29,7 +29,7 @@ class HomeModel extends HomeEntity {
           image: volumeInfo?.imageLinks?.thumbnail ?? '',
           bookName: volumeInfo!.title!,
           authName: volumeInfo.authors?.first ?? '',
-          price: 0.0,
+          pageNumber: volumeInfo.pageCount,
           rate: volumeInfo.ratingsCount,
         );
 
