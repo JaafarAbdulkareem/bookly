@@ -9,18 +9,22 @@ import 'package:get_it/get_it.dart';
 GetIt getIt = GetIt.instance;
 
 void setupGetItLocal(BuildContext context) {
-  getIt.registerSingleton<ApiService>(
-    ApiService(
-      Dio(),
-    ),
-  );
-  getIt.registerSingleton<FetchDataRespository>(
-    FetchDataRespository(
-      context: context,
-      localDataSource: HomeLocalDataSource(),
-      remoteDataSource: HomeRemoteDataSource(
-        apiService: getIt.get<ApiService>(),
+  if (!getIt.isRegistered<ApiService>()) {
+    getIt.registerSingleton<ApiService>(
+      ApiService(
+        Dio(),
       ),
-    ),
-  );
+    );
+  }
+  if (!getIt.isRegistered<FetchDataRespository>()) {
+    getIt.registerSingleton<FetchDataRespository>(
+      FetchDataRespository(
+        context: context,
+        localDataSource: HomeLocalDataSource(),
+        remoteDataSource: HomeRemoteDataSource(
+          apiService: getIt.get<ApiService>(),
+        ),
+      ),
+    );
+  }
 }
