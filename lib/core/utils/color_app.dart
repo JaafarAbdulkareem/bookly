@@ -8,6 +8,8 @@ abstract class ColorApp {
   static const Color buttonOrange = Color(0xFFEF8262);
   static const Color borderField = Color(0xFFFFFFFF);
   static const Color error = Color(0xFFFF5252);
+  static const Color progressIndicator = Color(0xFFFFFFFF);
+
 }
 
 abstract class TextColorApp {
