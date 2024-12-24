@@ -11,12 +11,16 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HeadHomeCubit(
-        FetchHeadUsecase(
-          fetchRespository: getIt.get<FetchDataRespository>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => HeadHomeCubit(
+            FetchHeadUsecase(
+              fetchRespository: getIt.get<FetchDataRespository>(),
+            ),
+          )..fetchHeadBooks(),
         ),
-      )..fetchHeadBooks(),
+      ],
       child: const Scaffold(
         body: BodyHomeView(),
       ),
