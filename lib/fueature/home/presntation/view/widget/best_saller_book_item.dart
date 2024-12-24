@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSallerBookItem extends StatelessWidget {
-  const BestSallerBookItem({super.key});
-
+  const BestSallerBookItem({super.key, this.image = ""});
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,13 +17,15 @@ class BestSallerBookItem extends StatelessWidget {
         },
         child: SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.2,
-          child: const Row(
+          child:  Row(
             children: [
               AspectRatio(
                 aspectRatio: 2.5 / 4,
-                child: BookItemWidget(),
+                child: BookItemWidget(
+                  image: image ,
+                ),
               ),
-              Flexible(child: BestSallerBookDetail())
+              const Flexible(child: BestSallerBookDetail())
             ],
           ),
         ),

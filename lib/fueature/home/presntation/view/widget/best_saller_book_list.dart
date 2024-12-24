@@ -12,7 +12,8 @@ class BestSallerBookList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList.builder(
       itemCount: books.length,
-      itemBuilder: (context, index) => const BestSallerBookItem( ),
+      itemBuilder: (context, index) =>
+          BestSallerBookItem(image: books[index].image ?? ""),
     );
   }
 }

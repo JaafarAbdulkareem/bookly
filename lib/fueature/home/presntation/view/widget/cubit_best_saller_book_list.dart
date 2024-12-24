@@ -17,9 +17,9 @@ class CubitBestSallerBookList extends StatelessWidget {
         if (state is BodyHomeSuccess) {
           return BestSallerBookList(books: state.books);
         } else if (state is BodyHomeFailure) {
-          return Text(state.errorMessage);
+          return SliverToBoxAdapter(child: Text(state.errorMessage));
         }
-        return const CustomProgressIndicatorWidget();
+        return const SliverToBoxAdapter(child: CustomProgressIndicatorWidget());
       },
     );
   }
