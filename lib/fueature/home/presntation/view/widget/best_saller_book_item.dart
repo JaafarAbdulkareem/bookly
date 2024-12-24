@@ -1,12 +1,13 @@
 import 'package:bookly/core/route.dart';
+import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/best_saller_book_detail.dart';
 import 'package:bookly/core/share/book_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSallerBookItem extends StatelessWidget {
-  const BestSallerBookItem({super.key, this.image = ""});
-  final String image;
+  const BestSallerBookItem({super.key, required this.book, });
+  final HomeEntity book;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,10 +23,10 @@ class BestSallerBookItem extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 2.5 / 4,
                 child: BookItemWidget(
-                  image: image ,
+                  image: book.image??'' ,
                 ),
               ),
-              const Flexible(child: BestSallerBookDetail())
+              Flexible(child: BestSallerBookDetail(book: book,))
             ],
           ),
         ),

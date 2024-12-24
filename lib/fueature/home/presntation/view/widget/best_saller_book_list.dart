@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class BestSallerBookList extends StatelessWidget {
   const BestSallerBookList({
     super.key,
-    required this.books,
+     required this.books ,
   });
   final List<HomeEntity> books;
   @override
@@ -13,7 +13,7 @@ class BestSallerBookList extends StatelessWidget {
     return SliverList.builder(
       itemCount: books.length,
       itemBuilder: (context, index) =>
-          BestSallerBookItem(image: books[index].image ?? ""),
+          BestSallerBookItem(book: books[index]),
     );
   }
 }
