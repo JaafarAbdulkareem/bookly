@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/color_app.dart';
 import 'package:flutter/material.dart';
 
 class CustomProgressIndicatorWidget extends StatelessWidget {
@@ -7,8 +8,17 @@ class CustomProgressIndicatorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(),
+    return Center(
+      child: SizedBox(
+        height: MediaQuery.sizeOf(context).height * 0.04,
+        child: const AspectRatio(
+          aspectRatio: 1,
+          child: CircularProgressIndicator(
+            backgroundColor: ColorApp.error,
+            color: ColorApp.progressIndicator,
+          ),
+        ),
+      ),
     );
   }
 }
