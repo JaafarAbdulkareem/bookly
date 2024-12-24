@@ -14,5 +14,6 @@
     "unknownError": "Opps Error was an Error, Please try again",
     "badResponse404": "Your request was not found, please try later",
     "badResponse500": "These is a problem with server, please try later",
-    "badResponse400": "Required parameter: q"
+    "badResponse400": "Required parameter: q",
+    "page": "page"
 }
