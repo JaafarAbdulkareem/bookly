@@ -13,7 +13,7 @@ class HomeEntity {
   @HiveField(3)
   final String? authName;
   @HiveField(4)
-  final num? price;
+  final num? pageNumber;
   @HiveField(5)
   final num? rate;
 
@@ -22,7 +22,7 @@ class HomeEntity {
     required this.image,
     required this.bookName,
     required this.authName,
-    required this.price,
+    required this.pageNumber,
     required this.rate,
   });
 }

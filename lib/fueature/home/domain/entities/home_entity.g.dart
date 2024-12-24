@@ -21,7 +21,7 @@ class HomeEntityAdapter extends TypeAdapter<HomeEntity> {
       image: fields[1] as String?,
       bookName: fields[2] as String,
       authName: fields[3] as String?,
-      price: fields[4] as num?,
+      pageNumber: fields[4] as num?,
       rate: fields[5] as num?,
     );
   }
@@ -39,7 +39,7 @@ class HomeEntityAdapter extends TypeAdapter<HomeEntity> {
       ..writeByte(3)
       ..write(obj.authName)
       ..writeByte(4)
-      ..write(obj.price)
+      ..write(obj.pageNumber)
       ..writeByte(5)
       ..write(obj.rate);
   }
