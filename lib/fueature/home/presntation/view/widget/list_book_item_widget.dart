@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class ListBookItemWidget extends StatelessWidget {
   const ListBookItemWidget({super.key, required this.books});
-final List<HomeEntity> books;
+  final List<HomeEntity> books;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,10 +17,11 @@ final List<HomeEntity> books;
         child: ListView.builder(
           itemCount: books.length,
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => const AspectRatio(
+          itemBuilder: (context, index) => AspectRatio(
             aspectRatio: 0.6,
             child: BookItemWidget(
-              playButton: PlayButtonWidget(),
+              image: books[index].image ?? '',
+              playButton: const PlayButtonWidget(),
             ),
           ),
         ),
