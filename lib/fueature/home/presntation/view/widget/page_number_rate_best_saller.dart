@@ -1,18 +1,20 @@
+import 'package:bookly/core/extension_language.dart';
+import 'package:bookly/core/utils/language_keys.dart';
 import 'package:bookly/core/utils/style.dart';
 import 'package:bookly/core/share/rate_book_widget.dart';
 import 'package:flutter/material.dart';
 
-class PriceRateBestSaller extends StatelessWidget {
-  const PriceRateBestSaller({super.key});
-
+class PageNumberRateBestSaller extends StatelessWidget {
+  const PageNumberRateBestSaller({super.key, required this.pageNumber});
+  final num pageNumber;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          r"19.99 $",
-          style: Style.textStyle20.copyWith(
+          "$pageNumber ${LanguageKeys.page.tr(context)}",
+          style: Style.textStyle14.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
