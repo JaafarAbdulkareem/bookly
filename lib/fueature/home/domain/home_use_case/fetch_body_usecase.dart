@@ -10,7 +10,7 @@ class FetchBodyUsecase extends UseCaseWithoutParameter<List<HomeEntity>> {
   FetchBodyUsecase({required this.fetchRespository});
 
   @override
-  Future<Either<Failure, List<HomeEntity>>> call() async {
-    return await fetchRespository.fetchBodyRespository();
+  Future<Either<Failure, List<HomeEntity>>> call()  {
+    return fetchRespository.fetchBodyRespository();
   }
 }
