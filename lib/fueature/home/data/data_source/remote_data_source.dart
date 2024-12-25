@@ -7,7 +7,7 @@ import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 
 abstract class RemoteDataSource {
   Future<List<HomeEntity>> fetchHeadRespository({required int startScroll});
-  Future<List<HomeEntity>> fetchBodyRespository();
+  Future<List<HomeEntity>> fetchBodyRespository({required int startScroll});
 }
 
 class HomeRemoteDataSource extends RemoteDataSource {
@@ -25,7 +25,7 @@ class HomeRemoteDataSource extends RemoteDataSource {
   }
 
   @override
-  Future<List<HomeEntity>> fetchBodyRespository() async {
+  Future<List<HomeEntity>> fetchBodyRespository({required int startScroll}) async {
     var data = await apiService.get(url: ApiConstant.bodyHomeUrl);
     List<HomeEntity> homeData = getHomeData(data);
     saveHomeLocal(homeData, HiveConstant.hiveBodyBooks);

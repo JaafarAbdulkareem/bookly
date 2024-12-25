@@ -31,6 +31,7 @@ class HomeModel extends HomeEntity {
           authName: volumeInfo.authors?.first ?? '',
           pageNumber: volumeInfo.pageCount,
           rate: volumeInfo.ratingsCount,
+          previewLink: volumeInfo.previewLink ?? '',
         );
 
   factory HomeModel.fromJson(Map<String, dynamic> json) => HomeModel(

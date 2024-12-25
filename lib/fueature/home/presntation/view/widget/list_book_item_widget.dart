@@ -47,7 +47,7 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
             aspectRatio: 0.6,
             child: BookItemWidget(
               image: widget.books[index].image ?? '',
-              playButton: const PlayButtonWidget(),
+              playButton: PlayButtonWidget(previewLink: widget.books[index].previewLink??'',),
             ),
           ),
         ),

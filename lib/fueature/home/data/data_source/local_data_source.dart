@@ -4,7 +4,7 @@ import 'package:hive/hive.dart';
 
 abstract class LocalDataSource {
   List<HomeEntity> fetchHeadRespository({required int startScroll});
-  List<HomeEntity> fetchBodyRespository();
+  List<HomeEntity> fetchBodyRespository({required int startScroll});
 }
 
 class HomeLocalDataSource extends LocalDataSource {
@@ -20,7 +20,7 @@ class HomeLocalDataSource extends LocalDataSource {
   }
 
   @override
-  List<HomeEntity> fetchBodyRespository() {
+  List<HomeEntity> fetchBodyRespository({required int startScroll}) {
     var box = Hive.box<HomeEntity>(HiveConstant.hiveBodyBooks);
     return box.values.toList();
   }

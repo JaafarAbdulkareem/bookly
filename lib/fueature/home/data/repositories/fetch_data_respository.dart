@@ -43,14 +43,16 @@ class FetchDataRespository extends FetchDomainRespository {
   }
 
   @override
-  Future<Either<Failure, List<HomeEntity>>> fetchBodyRespository() async {
+  Future<Either<Failure, List<HomeEntity>>> fetchBodyRespository(
+      {required int startScroll}) async {
     try {
       List<HomeEntity> data;
-      data = localDataSource.fetchBodyRespository();
+      data = localDataSource.fetchBodyRespository(startScroll: startScroll);
       if (data.isNotEmpty) {
         return right(data);
       }
-      data = await remoteDataSource.fetchBodyRespository();
+      data =
+          await remoteDataSource.fetchBodyRespository(startScroll: startScroll);
       return right(data);
     } catch (e) {
       if (e is DioException) {

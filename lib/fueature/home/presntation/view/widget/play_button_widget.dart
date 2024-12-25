@@ -9,8 +9,9 @@ import 'package:flutter/material.dart';
 class PlayButtonWidget extends StatelessWidget {
   const PlayButtonWidget({
     super.key,
+    required this.previewLink,
   });
-
+  final String previewLink;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,9 +21,7 @@ class PlayButtonWidget extends StatelessWidget {
         child: ClipOval(
           child: InkWell(
             onTap: () async {
-              await lanchUrlMethod(
-                context,'https://google.com'
-              );
+              await lanchUrlMethod(context, previewLink);
             },
             child: BackdropFilter(
               filter: ImageFilter.blur(
