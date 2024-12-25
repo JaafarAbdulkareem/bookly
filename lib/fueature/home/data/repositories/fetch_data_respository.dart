@@ -20,10 +20,10 @@ class FetchDataRespository extends FetchDomainRespository {
 
   @override
   Future<Either<Failure, List<HomeEntity>>> fetchHeadRespository(
-     {int startScroll = 0}) async {
+     {required  int startScroll}) async {
     try {
       List<HomeEntity> data;
-      data = localDataSource.fetchHeadRespository();
+      data = localDataSource.fetchHeadRespository(startScroll: startScroll);
       if (data.isNotEmpty) {
         return right(data);
       }
