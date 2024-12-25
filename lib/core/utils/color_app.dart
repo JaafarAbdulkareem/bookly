@@ -10,6 +10,7 @@ abstract class ColorApp {
   static const Color error = Color(0xFFFF5252);
   static const Color progressIndicator = Color(0xFFFFFFFF);
   static const Color snackbar =Color(0xFFFF9800);
+  static const Color fading =Color(0xFF9E9E9E);
 
 
 }

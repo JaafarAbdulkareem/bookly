@@ -1,10 +1,10 @@
 import 'package:bookly/core/extension_language.dart';
 import 'package:bookly/core/function/flashbar.dart';
-import 'package:bookly/core/share/custom_progress_indcator_widget.dart';
 import 'package:bookly/core/utils/language_keys.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/manage/head_home/head_home_cubit.dart';
 import 'package:bookly/fueature/home/presntation/manage/head_home/head_home_state.dart';
+import 'package:bookly/fueature/home/presntation/view/widget/indcator_list_head_book_item.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/list_book_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,8 +35,10 @@ class _CubitListBookItemWidgetState extends State<CubitListBookItemWidget> {
         }
       },
       builder: (context, state) {
-        if (state is HeadHomeLoading || state is HeadHomeInitial) {
-          return const CustomProgressIndicatorWidget();
+        if (state is HeadHomeLoading ||
+            state is HeadHomeInitial ||
+            state is HeadHomePginationLoading) {
+          return const IndcatorListHeadBookItem();
         }
         return ListBookItemWidget(
           books: books,
