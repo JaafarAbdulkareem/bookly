@@ -27,7 +27,7 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
   void scrollLisener() {
     _currentPostion = _scrollController.position.pixels;
     _maxPostion = _scrollController.position.maxScrollExtent;
-    if (_currentPostion >= _maxPostion * 0.7) {
+    if (_currentPostion >= 0.7 * _maxPostion) {
       BlocProvider.of<HeadHomeCubit>(context)
           .fetchHeadBooks(startScroll: startScroll++);
     }
@@ -48,6 +48,7 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height * 0.3,
         child: ListView.builder(
+          controller: _scrollController,
           itemCount: widget.books.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => AspectRatio(
