@@ -22,6 +22,11 @@ class HomeLocalDataSource extends LocalDataSource {
   @override
   List<HomeEntity> fetchBodyRespository({required int startScroll}) {
     var box = Hive.box<HomeEntity>(HiveConstant.hiveBodyBooks);
-    return box.values.toList();
+    late int endScroll = (startScroll + 1) * 10;
+    late int length = box.values.length;
+    if (startScroll >= length || endScroll > length) {
+      return [];
+    }
+    return box.values.toList().sublist(startScroll, endScroll);
   }
 }
