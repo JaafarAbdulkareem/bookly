@@ -1,7 +1,9 @@
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
+import 'package:bookly/fueature/home/presntation/manage/head_home/head_home_cubit.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/play_button_widget.dart';
 import 'package:bookly/core/share/book_item_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ListBookItemWidget extends StatefulWidget {
   const ListBookItemWidget({super.key, required this.books});
@@ -13,10 +15,21 @@ class ListBookItemWidget extends StatefulWidget {
 
 class _ListBookItemWidgetState extends State<ListBookItemWidget> {
   late ScrollController _scrollController;
+  late double _currentPostion, _maxPostion;
+  int startScroll = 1;
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+   _scrollController.addListener(scrollLisener);
+  }
+
+  void scrollLisener() {
+    _currentPostion = _scrollController.position.pixels;
+    _maxPostion = _scrollController.position.maxScrollExtent;
+    if (_currentPostion >= _maxPostion * 0.7) {
+      BlocProvider.of<HeadHomeCubit>(context).fetchHeadBooks(startScroll: startScroll++);
+    }
   }
 
   @override
