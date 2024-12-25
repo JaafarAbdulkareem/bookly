@@ -1,5 +1,5 @@
 import 'package:bookly/core/share/custom_fading_widget.dart';
-import 'package:bookly/core/utils/scale_app.dart';
+import 'package:bookly/fueature/home/presntation/view/widget/indcator_image_item.dart';
 import 'package:flutter/material.dart';
 
 class IndcatorListHeadBookItem extends StatelessWidget {
@@ -17,19 +17,10 @@ class IndcatorListHeadBookItem extends StatelessWidget {
           child: ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => AspectRatio(
-                aspectRatio: 0.6,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        HomeScale.itemBookBorder,
-                      ),
-                      color: Colors.grey,
-                    ),
-                  ),
-                )),
+            itemBuilder: (context, index) => const AspectRatio(
+              aspectRatio: 0.6,
+              child: IndcatorImageItem(),
+            ),
           ),
         ),
       ),
