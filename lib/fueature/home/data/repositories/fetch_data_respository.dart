@@ -20,7 +20,7 @@ class FetchDataRespository extends FetchDomainRespository {
 
   @override
   Future<Either<Failure, List<HomeEntity>>> fetchHeadRespository(
-      {int scrollNumber = 0}) async {
+     {int startScroll = 0}) async {
     try {
       List<HomeEntity> data;
       data = localDataSource.fetchHeadRespository();
@@ -28,7 +28,7 @@ class FetchDataRespository extends FetchDomainRespository {
         return right(data);
       }
       data = await remoteDataSource.fetchHeadRespository(
-        startScroll: scrollNumber,
+        startScroll: startScroll,
       );
       return right(data);
     } catch (e) {
