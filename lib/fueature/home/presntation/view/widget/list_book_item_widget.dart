@@ -21,14 +21,15 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
   void initState() {
     super.initState();
     _scrollController = ScrollController();
-   _scrollController.addListener(scrollLisener);
+    _scrollController.addListener(scrollLisener);
   }
 
   void scrollLisener() {
     _currentPostion = _scrollController.position.pixels;
     _maxPostion = _scrollController.position.maxScrollExtent;
     if (_currentPostion >= _maxPostion * 0.7) {
-      BlocProvider.of<HeadHomeCubit>(context).fetchHeadBooks(startScroll: startScroll++);
+      BlocProvider.of<HeadHomeCubit>(context)
+          .fetchHeadBooks(startScroll: startScroll++);
     }
   }
 

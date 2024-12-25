@@ -17,7 +17,7 @@ class HomeRemoteDataSource extends RemoteDataSource {
   @override
   Future<List<HomeEntity>> fetchHeadRespository({int startScroll = 0}) async {
     var data = await apiService.get(
-        url: "${ApiConstant.headHomeUrl}startIndex=${startScroll * 10}");
+        url: "${ApiConstant.headHomeUrl}&startIndex=${startScroll * 10}");
     List<HomeEntity> homeData = getHomeData(data);
     saveHomeLocal(homeData, HiveConstant.hiveHeadBooks);
     return homeData;
