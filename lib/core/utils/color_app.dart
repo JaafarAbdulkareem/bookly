@@ -9,6 +9,8 @@ abstract class ColorApp {
   static const Color borderField = Color(0xFFFFFFFF);
   static const Color error = Color(0xFFFF5252);
   static const Color progressIndicator = Color(0xFFFFFFFF);
+  static const Color snackbar =Color(0xFFFF9800);
+
 
 }
 

@@ -1,3 +1,4 @@
+import 'package:bookly/core/function/flashbar.dart';
 import 'package:bookly/core/share/custom_progress_indcator_widget.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/manage/head_home/head_home_cubit.dart';
@@ -23,15 +24,16 @@ class _CubitListBookItemWidgetState extends State<CubitListBookItemWidget> {
     return BlocConsumer<HeadHomeCubit, HeadHomeState>(
       listener: (context, state) {
         if (state is HeadHomeSuccess) {
+          flashBar(title: "HHh", message: "fffffffffffff").show(context);
           books.addAll(state.books);
+        }else if (state is HeadHomeFailure) {
+        
         }
       },
       builder: (context, state) {
         if (state is HeadHomeLoading || state is HeadHomeInitial) {
           return const CustomProgressIndicatorWidget();
-        } else if (state is HeadHomeFailure) {
-          return Text(state.errorMessage);
-        }
+        } 
         return ListBookItemWidget(
           books: books,
         );
