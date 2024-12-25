@@ -17,4 +17,5 @@ abstract class LanguageKeys {
   static const String badResponse400 = "badResponse400";
   static const String page = "page";
   static const String alert = "alert";
+  static const String launchError = "launchError";
 }

@@ -16,5 +16,6 @@
     "badResponse500": "These is a problem with server, please try later",
     "badResponse400": "Required parameter: q",
     "page": "page",
-    "alert": "alert"
+    "alert": "alert",
+    "launchError": "Can not launch the URL : "
 }
