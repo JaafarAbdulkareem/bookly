@@ -1,5 +1,6 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:bookly/core/utils/color_app.dart';
+import 'package:bookly/core/utils/scale_app.dart';
 import 'package:flutter/material.dart';
 
 class AppSnackBar {
@@ -11,6 +12,6 @@ class AppSnackBar {
       ColorApp.scaffoldBackground,
     ],
   );
-  static const double messageSize = 16;
+  static const double messageSize = ScaleApp.messageSnackbar;
   static const FlushbarPosition direction = FlushbarPosition.TOP;
 }

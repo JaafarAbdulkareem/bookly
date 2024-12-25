@@ -2,6 +2,7 @@ abstract class ScaleApp {
   static const int timeWaitingNavigation = 2;
   static const int timeNavigationView = 250;
   static const double searchIcon = 20;
+  static const double messageSnackbar = 16;
 }
 
 abstract class SpalshScale {
