@@ -25,19 +25,6 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
     _scrollController.addListener(scrollLisener);
   }
 
-  void scrollLisener() async {
-    _currentPostion = _scrollController.position.pixels;
-    _maxPostion = _scrollController.position.maxScrollExtent;
-    if (_currentPostion >= 0.7 * _maxPostion) {
-      if (!isLoading) {
-        isLoading = true;
-        await BlocProvider.of<HeadHomeCubit>(context)
-            .fetchHeadBooks(startScroll: startScroll++);
-        isLoading = false;
-      }
-    }
-  }
-
   @override
   void dispose() {
     super.dispose();
@@ -66,5 +53,18 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
         ),
       ),
     );
+  }
+
+  void scrollLisener() async {
+    _currentPostion = _scrollController.position.pixels;
+    _maxPostion = _scrollController.position.maxScrollExtent;
+    if (_currentPostion >= 0.7 * _maxPostion) {
+      if (!isLoading) {
+        isLoading = true;
+        await BlocProvider.of<HeadHomeCubit>(context)
+            .fetchHeadBooks(startScroll: startScroll++);
+        isLoading = false;
+      }
+    }
   }
 }

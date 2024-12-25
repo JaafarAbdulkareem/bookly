@@ -6,7 +6,11 @@ class HeadHomeCubit extends Cubit<HeadHomeState> {
   HeadHomeCubit(this.fetchHeadUsecase) : super(HeadHomeInitial());
   final FetchHeadUsecase fetchHeadUsecase;
   Future<void> fetchHeadBooks({int startScroll = 0}) async {
-    emit(HeadHomeLoading());
+    if (startScroll == 0) {
+      emit(HeadHomeLoading());
+    } else {
+      emit(HeadHomePginationLoading());
+    }
     var data = await fetchHeadUsecase.call(startScroll);
     data.fold((failure) {
       emit(HeadHomeFailure(errorMessage: failure.errorMessage));
