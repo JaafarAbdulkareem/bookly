@@ -8,27 +8,19 @@ abstract class LocalDataSource {
 }
 
 class HomeLocalDataSource extends LocalDataSource {
-  late int _endScroll;
   @override
   List<HomeEntity> fetchHeadRespository({required int startScroll}) {
     var box = Hive.box<HomeEntity>(HiveConstant.hiveHeadBooks);
-    bool e = exceptionOfSubList(startScroll, box.values.length);
-    if (e) {
-      return box.values.toList().sublist(startScroll, _endScroll);
-    } else {
-      return [];
-    }
-  }
+    late int endScroll = (startScroll + 1) * 10;
+    late int length = box.values.length;
 
-  bool exceptionOfSubList(int startScroll, int length) {
-    _endScroll = (startScroll + 1) * 10;
     if (startScroll >= length) {
-      return false;
+      return [];
     } else {
-      if (_endScroll > length) {
-        _endScroll = length;
+      if (endScroll > length) {
+        endScroll = length;
       }
-      return true;
+      return box.values.toList().sublist(startScroll, endScroll);
     }
   }
 
