@@ -13,15 +13,10 @@ class HomeLocalDataSource extends LocalDataSource {
     var box = Hive.box<HomeEntity>(HiveConstant.hiveHeadBooks);
     late int endScroll = (startScroll + 1) * 10;
     late int length = box.values.length;
-
-    if (startScroll >= length) {
+    if (startScroll >= length || endScroll > length) {
       return [];
-    } else {
-      if (endScroll > length) {
-        endScroll = length;
-      }
-      return box.values.toList().sublist(startScroll, endScroll);
     }
+    return box.values.toList().sublist(startScroll, endScroll);
   }
 
   @override

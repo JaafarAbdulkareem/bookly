@@ -1,6 +1,7 @@
 const String _baseUrl = "https://www.googleapis.com/";
 const String _bookUrl = "books/v1/volumes?";
-const String _headBookQuery = "q=programming&filter=free-ebooks&orderBy=relevance&printType=books";
+const String _headBookQuery =
+    "q=programming&filter=free-ebooks&printType=books";
 const String _bodyBookQuery = "q=programming";
 
 class ApiConstant {
@@ -10,4 +11,3 @@ class ApiConstant {
   static const String error = "error";
   static const String message = "message";
 }
- 

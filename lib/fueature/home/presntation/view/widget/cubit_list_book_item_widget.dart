@@ -35,9 +35,7 @@ class _CubitListBookItemWidgetState extends State<CubitListBookItemWidget> {
         }
       },
       builder: (context, state) {
-        if (state is HeadHomeLoading ||
-            state is HeadHomeInitial ||
-            state is HeadHomePginationLoading) {
+        if (state is HeadHomeLoading || state is HeadHomeInitial) {
           return const IndcatorListHeadBookItem();
         }
         return ListBookItemWidget(

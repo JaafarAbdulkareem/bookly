@@ -6,7 +6,7 @@ import 'package:bookly/fueature/home/data/models/home_model/home_model.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 
 abstract class RemoteDataSource {
-  Future<List<HomeEntity>> fetchHeadRespository({required int startScroll });
+  Future<List<HomeEntity>> fetchHeadRespository({required int startScroll});
   Future<List<HomeEntity>> fetchBodyRespository();
 }
 
@@ -15,7 +15,8 @@ class HomeRemoteDataSource extends RemoteDataSource {
 
   HomeRemoteDataSource({required this.apiService});
   @override
-  Future<List<HomeEntity>> fetchHeadRespository({required int startScroll }) async {
+  Future<List<HomeEntity>> fetchHeadRespository(
+      {required int startScroll}) async {
     var data = await apiService.get(
         url: "${ApiConstant.headHomeUrl}&startIndex=${startScroll * 10}");
     List<HomeEntity> homeData = getHomeData(data);
