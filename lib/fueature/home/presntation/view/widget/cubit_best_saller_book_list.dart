@@ -1,4 +1,8 @@
+import 'package:bookly/core/extension_language.dart';
+import 'package:bookly/core/function/flashbar.dart';
 import 'package:bookly/core/share/custom_progress_indcator_widget.dart';
+import 'package:bookly/core/utils/language_keys.dart';
+import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/manage/body_home/body_home_cubit.dart';
 import 'package:bookly/fueature/home/presntation/manage/body_home/body_home_state.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/best_saller_book_list.dart';
@@ -9,17 +13,27 @@ class CubitBestSallerBookList extends StatelessWidget {
   const CubitBestSallerBookList({
     super.key,
   });
-
+  static List<HomeEntity> books = [];
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BodyHomeCubit, BodyHomeState>(
-      builder: (context, state) {
+    return BlocConsumer<BodyHomeCubit, BodyHomeState>(
+      listener: (context, state) {
         if (state is BodyHomeSuccess) {
-          return BestSallerBookList(books: state.books);
+          books.addAll(state.books);
         } else if (state is BodyHomeFailure) {
-          return SliverToBoxAdapter(child: Text(state.errorMessage));
+          flashBar(
+            title: LanguageKeys.alert.tr(context),
+            message: state.errorMessage.tr(context),
+          ).show(context);
         }
-        return const SliverToBoxAdapter(child: CustomProgressIndicatorWidget());
+      },
+      builder: (context, state) {
+        if (state is BodyHomeLoading || state is BodyHomeInitial) {
+          return const SliverToBoxAdapter(
+            child: CustomProgressIndicatorWidget(),
+          );
+        }
+        return BestSallerBookList(books: books);
       },
     );
   }
