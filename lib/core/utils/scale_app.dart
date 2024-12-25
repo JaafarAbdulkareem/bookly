@@ -3,6 +3,10 @@ abstract class ScaleApp {
   static const int timeNavigationView = 250;
   static const double searchIcon = 20;
   static const double messageSnackbar = 16;
+  static const double fadingBegin = 0.4;
+  static const double fadingEnd = 0.8;
+  static const int fadingDuring = 2000;
+
 }
 
 abstract class SpalshScale {
