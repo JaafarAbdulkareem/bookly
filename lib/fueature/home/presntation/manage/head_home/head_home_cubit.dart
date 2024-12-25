@@ -5,9 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class HeadHomeCubit extends Cubit<HeadHomeState> {
   HeadHomeCubit(this.fetchHeadUsecase) : super(HeadHomeInitial());
   final FetchHeadUsecase fetchHeadUsecase;
-  Future<void> fetchHeadBooks() async {
+  Future<void> fetchHeadBooks({int startScroll = 0}) async {
     emit(HeadHomeLoading());
-    var data = await fetchHeadUsecase.call();
+    var data = await fetchHeadUsecase.call(startScroll);
     data.fold((failure) {
       emit(HeadHomeFailure(errorMessage: failure.errorMessage));
     }, (books) {
