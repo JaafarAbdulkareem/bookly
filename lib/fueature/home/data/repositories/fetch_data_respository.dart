@@ -20,7 +20,7 @@ class FetchDataRespository extends FetchDomainRespository {
 
   @override
   Future<Either<Failure, List<HomeEntity>>> fetchHeadRespository(
-     {required  int startScroll}) async {
+      {required int startScroll}) async {
     try {
       List<HomeEntity> data;
       data = localDataSource.fetchHeadRespository(startScroll: startScroll);
@@ -34,7 +34,7 @@ class FetchDataRespository extends FetchDomainRespository {
     } catch (e) {
       if (e is DioException) {
         if (context.mounted) {
-          return left(ServersFailure.fromDioError(context, e));
+          return left(ServersFailure.fromDioError(e));
         }
         return left(ServersFailure(errorMessage: e.toString()));
       }
@@ -55,7 +55,7 @@ class FetchDataRespository extends FetchDomainRespository {
     } catch (e) {
       if (e is DioException) {
         if (context.mounted) {
-          return left(ServersFailure.fromDioError(context, e));
+          return left(ServersFailure.fromDioError(e));
         }
         return left(ServersFailure(errorMessage: e.toString()));
       }
