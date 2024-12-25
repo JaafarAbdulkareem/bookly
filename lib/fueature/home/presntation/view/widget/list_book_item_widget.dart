@@ -22,7 +22,7 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
   void initState() {
     super.initState();
     _scrollController = ScrollController();
-    _scrollController.addListener(scrollLisener);
+    _scrollController.addListener(_scrollLisener);
   }
 
   @override
@@ -55,7 +55,7 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
     );
   }
 
-  void scrollLisener() async {
+  void _scrollLisener() async {
     _currentPostion = _scrollController.position.pixels;
     _maxPostion = _scrollController.position.maxScrollExtent;
     if (_currentPostion >= 0.7 * _maxPostion) {
