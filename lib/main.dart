@@ -6,6 +6,7 @@ import 'package:bookly/core/utils/localizations_delegates.dart';
 import 'package:bookly/core/utils/color_app.dart';
 import 'package:bookly/core/utils/lang_constant.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
+import 'package:bookly/fueature/home/presntation/manage/book_detail/book_detail_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,20 +27,25 @@ class BooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     setupGetItLocal(context);
-    return MaterialApp.router(
-      routerConfig: RouteApp.router,
-      debugShowCheckedModeBanner: false,
-      title: 'Bookly app',
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: ColorApp.scaffoldBackground,
-        textTheme: GoogleFonts.montserratTextTheme(
-          ThemeData.dark().textTheme,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create:(context) => BookDetailCubit() ),
+      ],
+      child: MaterialApp.router(
+        routerConfig: RouteApp.router,
+        debugShowCheckedModeBanner: false,
+        title: 'Bookly app',
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: ColorApp.scaffoldBackground,
+          textTheme: GoogleFonts.montserratTextTheme(
+            ThemeData.dark().textTheme,
+          ),
         ),
+        // home: const SplashView(),
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: _supportedLocales,
+        localeResolutionCallback: _localResolution,
       ),
-      // home: const SplashView(),
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: _supportedLocales,
-      localeResolutionCallback: _localResolution,
     );
   }
 

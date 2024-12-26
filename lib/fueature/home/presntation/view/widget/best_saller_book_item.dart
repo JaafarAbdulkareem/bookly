@@ -1,8 +1,10 @@
 import 'package:bookly/core/route.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
+import 'package:bookly/fueature/home/presntation/manage/book_detail/book_detail_cubit.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/best_saller_book_detail.dart';
 import 'package:bookly/core/share/book_item_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSallerBookItem extends StatelessWidget {
@@ -18,6 +20,7 @@ class BestSallerBookItem extends StatelessWidget {
       child: GestureDetector(
         onTap: () async {
           GoRouter.of(context).push(RouteApp.bookDetailView);
+          BlocProvider.of<BookDetailCubit>(context).book = book;
         },
         child: SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.2,
