@@ -8,6 +8,7 @@ import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 abstract class RemoteDataSource {
   Future<List<HomeEntity>> fetchHeadRespository({required int startScroll});
   Future<List<HomeEntity>> fetchBodyRespository({required int startScroll});
+  Future<List<HomeEntity>> fetchSimilerRespository({required int startScroll});
 }
 
 class HomeRemoteDataSource extends RemoteDataSource {
@@ -28,9 +29,19 @@ class HomeRemoteDataSource extends RemoteDataSource {
   Future<List<HomeEntity>> fetchBodyRespository(
       {required int startScroll}) async {
     var data = await apiService.get(
-        url: "${ApiConstant.bodyHomeUrl}&startIndex=${startScroll * 10}");
+        url: "${ApiConstant.similerHomeUrl}&startIndex=${startScroll * 10}");
     List<HomeEntity> homeData = getHomeData(data);
     saveHomeLocal(homeData, HiveConstant.hiveBodyBooks);
+    return homeData;
+  }
+
+  @override
+  Future<List<HomeEntity>> fetchSimilerRespository(
+      {required int startScroll}) async {
+    var data = await apiService.get(
+        url: "${ApiConstant.bodyHomeUrl}&startIndex=${startScroll * 10}");
+    List<HomeEntity> homeData = getHomeData(data);
+    saveHomeLocal(homeData, HiveConstant.hiveSimilerBooks);
     return homeData;
   }
 
