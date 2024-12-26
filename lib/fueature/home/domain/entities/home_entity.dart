@@ -16,6 +16,7 @@ class HomeEntity {
   final num? pageNumber;
   @HiveField(5)
   final num? rate;
+  @HiveField(6)
   final String? previewLink;
 
   HomeEntity({
@@ -25,6 +26,6 @@ class HomeEntity {
     required this.authName,
     required this.pageNumber,
     required this.rate,
-    this.previewLink,
+    required this.previewLink,
   });
 }

@@ -23,13 +23,14 @@ class HomeEntityAdapter extends TypeAdapter<HomeEntity> {
       authName: fields[3] as String?,
       pageNumber: fields[4] as num?,
       rate: fields[5] as num?,
+      previewLink: fields[6] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, HomeEntity obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.bookID)
       ..writeByte(1)
@@ -41,7 +42,9 @@ class HomeEntityAdapter extends TypeAdapter<HomeEntity> {
       ..writeByte(4)
       ..write(obj.pageNumber)
       ..writeByte(5)
-      ..write(obj.rate);
+      ..write(obj.rate)
+      ..writeByte(6)
+      ..write(obj.previewLink);
   }
 
   @override
