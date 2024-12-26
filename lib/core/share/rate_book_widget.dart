@@ -4,8 +4,8 @@ import 'package:bookly/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class RateBookWidget extends StatelessWidget {
-  const RateBookWidget({super.key});
-
+  const RateBookWidget({super.key, required this.rate});
+  final num rate;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,17 +18,17 @@ class RateBookWidget extends StatelessWidget {
           size: 12.8,
         ),
         const SizedBox(width: 6),
-        const Text(
-          '4.8',
+        Text(
+          rate.toString(),
           style: Style.textStyle16,
         ),
         const SizedBox(width: 6),
-        Text(
-          '(2390)',
-          style: Style.textStyle14.copyWith(
-            color: TextColorApp.peopleRate,
-          ),
-        ),
+        // Text(
+        //   '(2390)',
+        //   style: Style.textStyle14.copyWith(
+        //     color: TextColorApp.peopleRate,
+        //   ),
+        // ),
       ],
     );
   }

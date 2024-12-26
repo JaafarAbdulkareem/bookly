@@ -5,8 +5,13 @@ import 'package:bookly/core/share/rate_book_widget.dart';
 import 'package:flutter/material.dart';
 
 class PageNumberRateBestSaller extends StatelessWidget {
-  const PageNumberRateBestSaller({super.key, required this.pageNumber});
+  const PageNumberRateBestSaller({
+    super.key,
+    required this.pageNumber,
+    required this.rate,
+  });
   final num pageNumber;
+  final num rate;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +23,7 @@ class PageNumberRateBestSaller extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        const RateBookWidget()
+        RateBookWidget(rate: rate)
       ],
     );
   }

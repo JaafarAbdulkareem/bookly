@@ -26,7 +26,7 @@ class HeadBookDetail extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        const RateBookWidget(),
+        const RateBookWidget(rate: 4.8,),
         const SizedBox(height: 30),
       ],
     );

@@ -1,6 +1,5 @@
 import 'package:bookly/core/extension_language.dart';
 import 'package:bookly/core/function/flashbar.dart';
-import 'package:bookly/core/share/custom_progress_indcator_widget.dart';
 import 'package:bookly/core/utils/language_keys.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/manage/body_home/body_home_cubit.dart';
@@ -29,11 +28,8 @@ class CubitBestSallerBookList extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return IndcatorBestSallerList();
         if (state is BodyHomeLoading || state is BodyHomeInitial) {
-          return const SliverToBoxAdapter(
-            child: CustomProgressIndicatorWidget(),
-          );
+          return const IndcatorBestSallerList();
         }
         return BestSallerBookList(books: books);
       },

@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSallerBookItem extends StatelessWidget {
-  const BestSallerBookItem({super.key, required this.book, });
+  const BestSallerBookItem({
+    super.key,
+    required this.book,
+  });
   final HomeEntity book;
   @override
   Widget build(BuildContext context) {
@@ -18,15 +21,18 @@ class BestSallerBookItem extends StatelessWidget {
         },
         child: SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.2,
-          child:  Row(
+          child: Row(
             children: [
               AspectRatio(
                 aspectRatio: 2.5 / 4,
                 child: BookItemWidget(
-                  image: book.image??'' ,
+                  image: book.image ?? '',
                 ),
               ),
-              Flexible(child: BestSallerBookDetail(book: book,))
+              Flexible(
+                  child: BestSallerBookDetail(
+                book: book,
+              ))
             ],
           ),
         ),

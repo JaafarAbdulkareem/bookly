@@ -29,6 +29,7 @@ class BestSallerBookDetail extends StatelessWidget {
             ),
             PageNumberRateBestSaller(
               pageNumber: book.pageNumber!,
+              rate: book.rate ?? 0,
             )
           ],
         ),
