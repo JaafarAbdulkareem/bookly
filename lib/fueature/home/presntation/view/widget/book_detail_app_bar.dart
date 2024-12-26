@@ -10,13 +10,15 @@ class BookDetailAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(IconApp.close),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(IconApp.cart),
-        ),
+        // IconButton(
+        //   onPressed: () {},
+        //   icon: const Icon(IconApp.cart),
+        // ),
       ],
     );
   }
