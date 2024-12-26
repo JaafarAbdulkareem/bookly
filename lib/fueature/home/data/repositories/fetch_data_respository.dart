@@ -64,4 +64,26 @@ class FetchDataRespository extends FetchDomainRespository {
       return left(ServersFailure(errorMessage: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, List<HomeEntity>>> fetchSimilerRespository(
+      {required int startScroll}) async {
+    try {
+      List<HomeEntity> data;
+      data = localDataSource.fetchSimilerRespository(startScroll: startScroll);
+      if (data.isNotEmpty) {
+        return right(data);
+      }
+      data = await remoteDataSource.fetchSimilerRespository(startScroll: startScroll);
+      return right(data);
+    } catch (e) {
+      if (e is DioException) {
+        if (context.mounted) {
+          return left(ServersFailure.fromDioError(e));
+        }
+        return left(ServersFailure(errorMessage: e.toString()));
+      }
+      return left(ServersFailure(errorMessage: e.toString()));
+    }
+  }
 }
