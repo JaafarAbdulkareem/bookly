@@ -1,10 +1,10 @@
 import 'package:bookly/core/extension_language.dart';
 import 'package:bookly/core/function/flashbar.dart';
-import 'package:bookly/core/share/custom_progress_indcator_widget.dart';
 import 'package:bookly/core/utils/language_keys.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/manage/book_detail/cubit/book_detail_cubit.dart';
 import 'package:bookly/fueature/home/presntation/manage/book_detail/cubit/book_detail_state.dart';
+import 'package:bookly/fueature/home/presntation/view/widget/indector_list_similer_book.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/list_similer_books.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,11 +33,9 @@ class _CubitListSimiterBookState extends State<CubitListSimiterBook> {
           ).show(context);
         }
       },
-      
       builder: (context, state) {
-        // return const Text('Helolo') ;
         if (state is BookDetailLoading || state is BookDetailInitial) {
-          return const CustomProgressIndicatorWidget() ;
+          return const IndecatorListSimilerBook();
         }
         return ListSimilerBooks(
           books: books,
