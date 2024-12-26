@@ -1,6 +1,6 @@
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/manage/head_home/head_home_cubit.dart';
-import 'package:bookly/fueature/home/presntation/view/widget/play_button_widget.dart';
+import 'package:bookly/fueature/home/presntation/view/widget/cubit_play_button_widget.dart';
 import 'package:bookly/core/share/book_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,7 +47,7 @@ class _ListBookItemWidgetState extends State<ListBookItemWidget> {
             aspectRatio: 0.6,
             child: BookItemWidget(
               image: widget.books[index].image ?? '',
-              playButton: PlayButtonWidget(previewLink: widget.books[index].previewLink??'',),
+              playButton: CubitPlayButtonWidget(previewLink: widget.books[index].previewLink??'',),
             ),
           ),
         ),

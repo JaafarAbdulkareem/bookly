@@ -8,8 +8,8 @@ import 'package:bookly/fueature/home/presntation/view/widget/indicator_double_bu
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ButtonBookDetail extends StatelessWidget {
-  const ButtonBookDetail({super.key});
+class CubitButtonBookDetail extends StatelessWidget {
+  const CubitButtonBookDetail({super.key});
 
   @override
   Widget build(BuildContext context) {

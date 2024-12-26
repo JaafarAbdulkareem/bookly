@@ -1,5 +1,5 @@
 import 'package:bookly/fueature/home/presntation/view/widget/book_detail_app_bar.dart';
-import 'package:bookly/fueature/home/presntation/view/widget/button_book_detail.dart';
+import 'package:bookly/fueature/home/presntation/view/widget/cubit_button_book_detail.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/foot_book_detail.dart';
 import 'package:bookly/fueature/home/presntation/view/widget/head_book_detail.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class BodyBookDetailView extends StatelessWidget {
               children: [
                 BookDetailAppBar(),
                 HeadBookDetail(),
-                ButtonBookDetail(),
+                CubitButtonBookDetail(),
                 Expanded(child: SizedBox(height: 45)),
                 FootBookDetail(),
               ],
