@@ -1,5 +1,6 @@
 import 'package:bookly/core/utils/color_app.dart';
 import 'package:bookly/core/utils/icon_app.dart';
+import 'package:bookly/core/utils/scale_app.dart';
 import 'package:bookly/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class RateBookWidget extends StatelessWidget {
         const Icon(
           IconApp.star,
           color: ColorApp.star,
-          size: 12.8,
+          size: HomeScale.starIcon,
         ),
         const SizedBox(width: 6),
         Text(

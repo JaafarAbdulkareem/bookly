@@ -20,6 +20,7 @@ abstract class HomeScale {
   static const double playicon = 8;
   static const double itemBookBorder = 12;
   static const double leftmergin = 30;
+  static const double starIcon = 12.8;
 }
 
 abstract class BookDetailScale {
