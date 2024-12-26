@@ -8,7 +8,7 @@ class BookItemWidget extends StatelessWidget {
   const BookItemWidget({
     super.key,
     this.playButton,
-   this.image = "",
+    required this.image ,
   });
   final String image;
   final Widget? playButton;

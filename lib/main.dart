@@ -6,7 +6,7 @@ import 'package:bookly/core/utils/localizations_delegates.dart';
 import 'package:bookly/core/utils/color_app.dart';
 import 'package:bookly/core/utils/lang_constant.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
-import 'package:bookly/fueature/home/presntation/manage/book_detail/book_detail_cubit.dart';
+import 'package:bookly/fueature/home/presntation/manage/home_book_detail/home_book_detail_cubit.dart';
 import 'package:bookly/fueature/home/presntation/manage/launch_http/launch_http_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +19,7 @@ void main() async {
   Hive.registerAdapter(HomeEntityAdapter());
   await Hive.openBox<HomeEntity>(HiveConstant.hiveHeadBooks);
   await Hive.openBox<HomeEntity>(HiveConstant.hiveBodyBooks);
+  await Hive.openBox<HomeEntity>(HiveConstant.hiveSimilerBooks);
   Bloc.observer = SimpleBlocObervator();
   runApp(const BooklyApp());
 }
@@ -30,7 +31,7 @@ class BooklyApp extends StatelessWidget {
     setupGetItLocal(context);
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => BookDetailCubit()),
+        BlocProvider(create: (context) => HomeBookDetailCubit()),
         BlocProvider(create: (context) => LaunchHttpCubit()),
       ],
       child: MaterialApp.router(

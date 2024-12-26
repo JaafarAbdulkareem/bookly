@@ -1,5 +1,5 @@
 import 'package:bookly/core/share/book_item_widget.dart';
-import 'package:bookly/fueature/home/presntation/manage/book_detail/book_detail_cubit.dart';
+import 'package:bookly/fueature/home/presntation/manage/home_book_detail/home_book_detail_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +13,7 @@ class CoverBookDetail extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 4.5 / 6,
         child: BookItemWidget(
-          image: BlocProvider.of<BookDetailCubit>(context).book.image ?? "",
+          image: BlocProvider.of<HomeBookDetailCubit>(context).book.image ?? "",
         ),
       ),
     );

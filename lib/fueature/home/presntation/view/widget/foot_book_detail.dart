@@ -1,7 +1,7 @@
 import 'package:bookly/core/extension_language.dart';
 import 'package:bookly/core/utils/language_keys.dart';
 import 'package:bookly/core/utils/style.dart';
-import 'package:bookly/fueature/home/presntation/view/widget/list_similer_books.dart';
+import 'package:bookly/fueature/home/presntation/view/widget/cubit_list_simiter_book.dart';
 import 'package:flutter/material.dart';
 
 class FootBookDetail extends StatelessWidget {
@@ -19,7 +19,7 @@ class FootBookDetail extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        const ListSimilerBooks(),
+        const CubitListSimiterBook(),
         const SizedBox(height: 10),
       ],
     );
