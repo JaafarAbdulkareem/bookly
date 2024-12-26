@@ -7,6 +7,7 @@ import 'package:bookly/core/utils/color_app.dart';
 import 'package:bookly/core/utils/lang_constant.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/manage/book_detail/book_detail_cubit.dart';
+import 'package:bookly/fueature/home/presntation/manage/launch_http/launch_http_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,7 +30,8 @@ class BooklyApp extends StatelessWidget {
     setupGetItLocal(context);
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create:(context) => BookDetailCubit() ),
+        BlocProvider(create: (context) => BookDetailCubit()),
+        BlocProvider(create: (context) => LaunchHttpCubit()),
       ],
       child: MaterialApp.router(
         routerConfig: RouteApp.router,
