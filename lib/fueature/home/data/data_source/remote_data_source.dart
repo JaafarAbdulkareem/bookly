@@ -1,14 +1,12 @@
 import 'package:bookly/core/api_service.dart';
-import 'package:bookly/core/function/save_home_local_hive.dart';
+import 'package:bookly/core/function/json_to_book_model.dart';
 import 'package:bookly/core/utils/api_constant.dart';
-import 'package:bookly/core/utils/hive_constant.dart';
-import 'package:bookly/fueature/home/data/models/home_model/home_model.dart';
-import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
+import 'package:bookly/core/models/book_model/book_model.dart';
 
 abstract class RemoteDataSource {
-  Future<List<HomeEntity>> fetchHeadRespository({required int startScroll});
-  Future<List<HomeEntity>> fetchBodyRespository({required int startScroll});
-  Future<List<HomeEntity>> fetchSimilerRespository({required int startScroll});
+  Future<List<BookModel>> fetchHeadRespository({required int startScroll});
+  Future<List<BookModel>> fetchBodyRespository({required int startScroll});
+  Future<List<BookModel>> fetchSimilerRespository({required int startScroll});
 }
 
 class HomeRemoteDataSource extends RemoteDataSource {
@@ -16,40 +14,31 @@ class HomeRemoteDataSource extends RemoteDataSource {
 
   HomeRemoteDataSource({required this.apiService});
   @override
-  Future<List<HomeEntity>> fetchHeadRespository(
+  Future<List<BookModel>> fetchHeadRespository(
       {required int startScroll}) async {
     var data = await apiService.get(
         url: "${ApiConstant.headHomeUrl}&startIndex=${startScroll * 10}");
-    List<HomeEntity> homeData = getHomeData(data);
-    saveHomeLocal(homeData, HiveConstant.hiveHeadBooks);
+    List<BookModel> homeData = jsonToBookModel(data);
+    // saveHomeLocal(homeData, HiveConstant.hiveHeadBooks);
     return homeData;
   }
 
   @override
-  Future<List<HomeEntity>> fetchBodyRespository(
+  Future<List<BookModel>> fetchBodyRespository(
       {required int startScroll}) async {
     var data = await apiService.get(
         url: "${ApiConstant.similerHomeUrl}&startIndex=${startScroll * 10}");
-    List<HomeEntity> homeData = getHomeData(data);
-    saveHomeLocal(homeData, HiveConstant.hiveBodyBooks);
+    List<BookModel> homeData = jsonToBookModel(data);
     return homeData;
   }
 
   @override
-  Future<List<HomeEntity>> fetchSimilerRespository(
+  Future<List<BookModel>> fetchSimilerRespository(
       {required int startScroll}) async {
     var data = await apiService.get(
         url: "${ApiConstant.bodyHomeUrl}&startIndex=${startScroll * 10}");
-    List<HomeEntity> homeData = getHomeData(data);
-    saveHomeLocal(homeData, HiveConstant.hiveSimilerBooks);
+    List<BookModel> homeData = jsonToBookModel(data);
+    // saveHomeLocal(homeData, HiveConstant.hiveSimilerBooks);
     return homeData;
-  }
-
-  List<HomeEntity> getHomeData(Map<String, dynamic> data) {
-    List<HomeEntity> dataHome = [];
-    for (var element in data[ApiConstant.items]) {
-      dataHome.add(HomeModel.fromJson(element));
-    }
-    return dataHome;
   }
 }
