@@ -18,5 +18,5 @@ Future<void> homHiveRegister() async {
 
 Future<void> searchHiveRegister() async {
   Hive.registerAdapter(SearchEntityAdapter());
-  await Hive.openBox<SearchEntity>(HiveConstant.hiveSeachBooks);
+  await Hive.openBox<SearchEntity>(HiveConstant.hiveSearchBooks);
 }

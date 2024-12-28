@@ -8,7 +8,7 @@ part of 'search_entity.dart';
 
 class SearchEntityAdapter extends TypeAdapter<SearchEntity> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
   SearchEntity read(BinaryReader reader) {

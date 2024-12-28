@@ -8,15 +8,12 @@ import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/domain/repositories/fetch_domain_respository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 class FetchDataRespository extends FetchDomainRespository {
-  final BuildContext context;
   final LocalDataSource localDataSource;
   final RemoteDataSource remoteDataSource;
 
   FetchDataRespository({
-    required this.context,
     required this.localDataSource,
     required this.remoteDataSource,
   });
@@ -34,14 +31,11 @@ class FetchDataRespository extends FetchDomainRespository {
       dataModel = await remoteDataSource.fetchHeadRespository(
         startScroll: startScroll,
       );
-      data = modelToEntity(dataModel, HiveConstant.hiveHeadBooks);
+      data = modelToHomeEntity(dataModel, HiveConstant.hiveHeadBooks);
       return right(data);
     } catch (e) {
       if (e is DioException) {
-        if (context.mounted) {
-          return left(ServersFailure.fromDioError(e));
-        }
-        return left(ServersFailure(errorMessage: e.toString()));
+        return left(ServersFailure.fromDioError(e));
       }
       return left(ServersFailure(errorMessage: e.toString()));
     }
@@ -60,14 +54,11 @@ class FetchDataRespository extends FetchDomainRespository {
       dataModel = await remoteDataSource.fetchBodyRespository(
         startScroll: startScroll,
       );
-      data = modelToEntity(dataModel, HiveConstant.hiveBodyBooks);
+      data = modelToHomeEntity(dataModel, HiveConstant.hiveBodyBooks);
       return right(data);
     } catch (e) {
       if (e is DioException) {
-        if (context.mounted) {
-          return left(ServersFailure.fromDioError(e));
-        }
-        return left(ServersFailure(errorMessage: e.toString()));
+        return left(ServersFailure.fromDioError(e));
       }
       return left(ServersFailure(errorMessage: e.toString()));
     }
@@ -86,14 +77,11 @@ class FetchDataRespository extends FetchDomainRespository {
       dataModel = await remoteDataSource.fetchSimilerRespository(
         startScroll: startScroll,
       );
-      data = modelToEntity(dataModel, HiveConstant.hiveSimilerBooks);
+      data = modelToHomeEntity(dataModel, HiveConstant.hiveSimilerBooks);
       return right(data);
     } catch (e) {
       if (e is DioException) {
-        if (context.mounted) {
-          return left(ServersFailure.fromDioError(e));
-        }
-        return left(ServersFailure(errorMessage: e.toString()));
+        return left(ServersFailure.fromDioError(e));
       }
       return left(ServersFailure(errorMessage: e.toString()));
     }

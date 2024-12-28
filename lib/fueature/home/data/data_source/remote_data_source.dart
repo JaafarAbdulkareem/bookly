@@ -19,7 +19,6 @@ class HomeRemoteDataSource extends RemoteDataSource {
     var data = await apiService.get(
         url: "${ApiConstant.headHomeUrl}&startIndex=${startScroll * 10}");
     List<BookModel> homeData = jsonToBookModel(data);
-    // saveHomeLocal(homeData, HiveConstant.hiveHeadBooks);
     return homeData;
   }
 
@@ -38,7 +37,6 @@ class HomeRemoteDataSource extends RemoteDataSource {
     var data = await apiService.get(
         url: "${ApiConstant.bodyHomeUrl}&startIndex=${startScroll * 10}");
     List<BookModel> homeData = jsonToBookModel(data);
-    // saveHomeLocal(homeData, HiveConstant.hiveSimilerBooks);
     return homeData;
   }
 }

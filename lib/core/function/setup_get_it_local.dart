@@ -19,7 +19,6 @@ void setupGetItLocal(BuildContext context) {
   if (!getIt.isRegistered<FetchDataRespository>()) {
     getIt.registerSingleton<FetchDataRespository>(
       FetchDataRespository(
-        context: context,
         localDataSource: HomeLocalDataSource(),
         remoteDataSource: HomeRemoteDataSource(
           apiService: getIt.get<ApiService>(),
