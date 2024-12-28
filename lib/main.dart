@@ -1,25 +1,19 @@
+import 'package:bookly/core/function/hive_register.dart';
 import 'package:bookly/core/function/setup_get_it_local.dart';
 import 'package:bookly/core/route.dart';
 import 'package:bookly/core/simple_bloc_obervator.dart';
-import 'package:bookly/core/utils/hive_constant.dart';
 import 'package:bookly/core/utils/localizations_delegates.dart';
 import 'package:bookly/core/utils/color_app.dart';
 import 'package:bookly/core/utils/lang_constant.dart';
-import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/home/presntation/manage/home_book_detail/home_book_detail_cubit.dart';
 import 'package:bookly/fueature/home/presntation/manage/launch_http/launch_http_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hive_flutter/adapters.dart';
 
 void main() async {
-  await Hive.initFlutter();
-  Hive.registerAdapter(HomeEntityAdapter());
-  await Hive.openBox<HomeEntity>(HiveConstant.hiveHeadBooks);
-  await Hive.openBox<HomeEntity>(HiveConstant.hiveBodyBooks);
-  await Hive.openBox<HomeEntity>(HiveConstant.hiveSimilerBooks);
+  await hiveRegister();
   Bloc.observer = SimpleBlocObervator();
   runApp(const BooklyApp());
 }
