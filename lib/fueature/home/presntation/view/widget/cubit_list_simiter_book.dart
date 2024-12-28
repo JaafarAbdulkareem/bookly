@@ -9,17 +9,11 @@ import 'package:bookly/fueature/home/presntation/view/widget/list_similer_books.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CubitListSimiterBook extends StatefulWidget {
+class CubitListSimiterBook extends StatelessWidget {
   const CubitListSimiterBook({
     super.key,
   });
-
-  @override
-  State<CubitListSimiterBook> createState() => _CubitListSimiterBookState();
-}
-
-class _CubitListSimiterBookState extends State<CubitListSimiterBook> {
-  List<HomeEntity> books = [];
+  static List<HomeEntity> books = [];
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<BookDetailCubit, BookDetailState>(
