@@ -1,9 +1,10 @@
 import 'package:bookly/core/utils/hive_constant.dart';
 import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
 import 'package:bookly/fueature/search/domain/entities/search_entity.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 
 Future<void> hiveRegister() async {
+  await Hive.initFlutter();
   await homHiveRegister();
   await searchHiveRegister();
 }
