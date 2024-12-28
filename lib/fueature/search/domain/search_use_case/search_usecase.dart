@@ -4,10 +4,10 @@ import 'package:bookly/fueature/search/domain/entities/search_entity.dart';
 import 'package:bookly/fueature/search/domain/repositories/search_domain_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class SearchUsecase extends UseCaseWithParameter<List<SearchEntity>, String> {
+class FetchSearchUsecase extends UseCaseWithParameter<List<SearchEntity>, String> {
   final SearchDomainRepository searchDomainRepository;
 
-  SearchUsecase({required this.searchDomainRepository});
+  FetchSearchUsecase({required this.searchDomainRepository});
 
   @override
   Future<Either<Failure, List<SearchEntity>>> call(String parameter) {

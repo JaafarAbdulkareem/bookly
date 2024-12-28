@@ -15,7 +15,7 @@ class SearchRemoteDataSource extends RemoteDataSource {
   @override
   Future<List<BookModel>> fetchRemoteRepositry(
       {required String searchTitle}) async {
-    var data =
+    Map<String, dynamic> data =
         await apiService.get(url: "${ApiConstant.searchUrl}$searchTitle");
     List<BookModel> dataModel = jsonToBookModel(data);
     return dataModel;
