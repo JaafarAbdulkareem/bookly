@@ -1,5 +1,3 @@
-import 'package:bookly/fueature/home/domain/entities/home_entity.dart';
-
 import 'access_info.dart';
 import 'sale_info.dart';
 import 'search_info.dart';
@@ -24,16 +22,7 @@ class BookModel {
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
-  }) ;
-  // : super(
-  //         bookID: id,
-  //         image: volumeInfo?.imageLinks?.thumbnail ?? '',
-  //         bookName: volumeInfo!.title!,
-  //         authName: volumeInfo.authors?.first ?? '',
-  //         pageNumber: volumeInfo.pageCount,
-  //         rate: volumeInfo.ratingsCount,
-  //         previewLink: volumeInfo.previewLink ?? '',
-  //       );
+  });
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,
