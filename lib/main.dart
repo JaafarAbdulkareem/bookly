@@ -22,7 +22,7 @@ class BooklyApp extends StatelessWidget {
   const BooklyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    setupGetItLocal(context);
+    setupHome(context);
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => HomeBookDetailCubit()),

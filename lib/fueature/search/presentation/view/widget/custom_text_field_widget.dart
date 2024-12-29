@@ -5,16 +5,28 @@ import 'package:bookly/core/utils/language_keys.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
-  const CustomTextFieldWidget({super.key});
-
+  const CustomTextFieldWidget({
+    super.key,
+    required this.onPressed,
+    required this.onSave,
+  });
+  final VoidCallback onPressed;
+  final Function(String?) onSave;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value!.trim().isEmpty) {
+            return "Fill field, please";
+          }
+          return null;
+        },
+        onSaved: onSave,
         decoration: InputDecoration(
           suffixIcon: IconButton(
-            onPressed: () {},
+            onPressed: onPressed,
             icon: const Icon(IconApp.search),
           ),
           isDense: true,
