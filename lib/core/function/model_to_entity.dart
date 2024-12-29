@@ -13,12 +13,11 @@ List<HomeEntity> modelToHomeEntity(
   return data;
 }
 
-List<SearchEntity> modelToSearchEntity(
-    List<BookModel> dataModel, String hiveConstant) {
+List<SearchEntity> modelToSearchEntity(List<BookModel> dataModel) {
   List<SearchEntity> data = [];
   for (var element in dataModel) {
     data.add(SearchEntity.fromModel(element));
   }
-  saveSearchLocal(data, hiveConstant);
+
   return data;
 }
