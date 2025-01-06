@@ -7,9 +7,13 @@ With *Bookly*, you can easily browse through a curated collection of the best pr
 ---
 
 ## *🌟 Features 🌟*
+### 1. Splash Screen 🌟
+   
+Experience a smooth and welcoming entry into the Bookly App with our beautifully designed splash screen! 🌟✨
+![Book Splash](assets/screenshots/HomeScreen.png)
+![Book Features](assets/screenshots/HomeScreen(1).png)
 
-### 1. *Book Collection Overview* 📖
-![Books Overview](assets/screenshots/books_overview.png)
+### 2. *Book Collection Overview* 📖
 
 Explore a vast collection of programming books across different genres and technologies:
 
@@ -19,8 +23,7 @@ Explore a vast collection of programming books across different genres and techn
 
 ---
 
-### 2. *Detailed Book Information* 📘
-![Book Details](assets/screenshots/book_details.png)
+### 3. *Detailed Book Information* 📘
 
 Get comprehensive details for each book:
 
@@ -31,8 +34,7 @@ Get comprehensive details for each book:
 
 ---
 
-### 3. *Related Books Suggestions* 📚🌟
-![Related Books](assets/screenshots/related_books.png)
+### 4. *Related Books Suggestions* 📚🌟
 
 Discover similar books based on your interests:
 
@@ -42,8 +44,7 @@ Discover similar books based on your interests:
 
 ---
 
-### 4. *Search and Filter* 🔎🔃
-![Search Filter](assets/screenshots/search_filter.png)
+### 5. *Search and Filter* 🔎🔃
 
 Quickly find books with powerful search and filtering options:
 
@@ -53,8 +54,7 @@ Quickly find books with powerful search and filtering options:
 
 ---
 
-### 5. *Book Reviews and Ratings* 📝⭐
-![Reviews](assets/screenshots/reviews.png)
+### 6. *Book Reviews and Ratings* 📝⭐
 
 See what other readers think before making your choice:
 
@@ -63,33 +63,13 @@ See what other readers think before making your choice:
 
 ---
 
-### 6. *Book Purchasing* 💳💸
-![Purchase](assets/screenshots/purchase.png)
-
-Easily purchase your favorite books:
-
-- *Secure Payment Options:* Use a variety of payment methods, including credit/debit cards, PayPal, and more. 💳💸  
-- *Purchase History:* Keep track of your purchases and downloads. 📂📚
-
----
-
-### 7. *Wishlist and Favorites* 💖📚
-![Wishlist](assets/screenshots/wishlist.png)
-
-Save books for later:
-
-- *Add to Wishlist:* Easily add books to your wishlist and access them anytime. 💖⏳  
-- *Favorites:* Mark your favorite books for quick access. 📖⭐
-
----
-
 ## *📧 Contact Us 📧*
 
 If you have any questions or need assistance, or if you’d like to discuss suggestions or improvements, feel free to reach out to us! We are here to help! 🤗☎️
 
-- *Email:* booklysupport@example.com 📧  
-- *LinkedIn:* [@BooklyApp](https://www.linkedin.com/in/booklyapp) 📚  
-- *WhatsApp:* [Contact us on WhatsApp](https://wa.me/+1234567890) 📱
+- *Email:* jaafar.tbp@gamil.com📧  
+- *LinkedIn:* [@Jaafar Abdulkareem](https://www.linkedin.com/in/jaafar-b-23b647297/) 📚  
+- *WhatsApp:* [Contact us on WhatsApp](https://wa.me/+917204438952) 📱
 
 ---
 
