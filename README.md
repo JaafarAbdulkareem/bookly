@@ -8,11 +8,12 @@ With *Bookly*, you can easily browse through a curated collection of the best pr
 
 ## *🌟 Features 🌟*
 ### 1. Splash Screen 🌟
-   
-Experience a smooth and welcoming entry into the Bookly App with our beautifully designed splash screen! 🌟✨
 
 ![Book Splash](assets/screenshoot/HomeScreen.png)
 
+Experience a smooth and welcoming entry into the Bookly App with our beautifully designed splash screen! 🌟✨
+
+![Book Splash](assets/screenshoot/edit.png)
 
 ### 2. *Book Collection Overview* 📖
 
