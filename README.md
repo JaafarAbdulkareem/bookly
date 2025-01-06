@@ -13,7 +13,6 @@ Experience a smooth and welcoming entry into the Bookly App with our beautifully
 
 ![Book Splash](assets/screenshots/HomeScreen.png)
 
-![Book Features](assets/screenshoot/edit.png)
 
 ### 2. *Book Collection Overview* 📖
 
