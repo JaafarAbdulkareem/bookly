@@ -11,9 +11,9 @@ With *Bookly*, you can easily browse through a curated collection of the best pr
    
 Experience a smooth and welcoming entry into the Bookly App with our beautifully designed splash screen! 🌟✨
 
-![Book Splash](assets/screenshots/HomeScreen.png)
+![Book Splash](assets\screenshots\HomeScreen.png)
 
-![Book Features](assets/screenshots/HomeScreen(1).png)
+![Book Features](assets\screenshoot\edit.png)
 
 ### 2. *Book Collection Overview* 📖
 
