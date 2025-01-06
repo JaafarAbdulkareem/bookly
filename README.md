@@ -8,4 +8,4 @@ Whether you're looking to manage your tasks, set reminders, or organize your dai
 
 ## *🌟 Features 🌟*
 ### 1. *Splash Screen* 🌟
-![Splash](assets/screenshots/Splash.png) 
+![Splash](assets/screenshoot/Home Screen.png) 
